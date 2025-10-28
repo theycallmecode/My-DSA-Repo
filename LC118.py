@@ -4,7 +4,7 @@
 🤖 Question : Given an integer numRows, return the first numRows of Pascal's triangle.
 ⚠️ Difficulty : 🟩Easy
 🧩 Topics : Array, Dynamic Programming
-🏢 Companies :
+🏢 Companies : Amazon, Adobe
 
 🔮 Algorithm : Row-by-Row Dynamic Programming
 
