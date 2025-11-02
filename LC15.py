@@ -8,7 +8,7 @@
 🧩 Topics : Array, Two Pointer, Sorting
 🏢 Companies : Amazon, Microsoft, Apple, Google, Meta, Adobe
 
-🔮 Algorithm : Two Pointer
+🔮 Algorithm : Sort + Two Pointer
 
 1. Sort the array. It allow us to skip duplicates and use two pointer.
 2. Loop the array with i : from 0 to n-2 , i is the first num in the triplet.
