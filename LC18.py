@@ -38,17 +38,63 @@
 
 9. After all loop finishes, return the result list.
 
-💎 Time Complexity : 
-💎 Space Complexity : 
+💎 Time Complexity : O(n^3)
+💎 Space Complexity : O(n)
 """
 
 from typing import List
 
 class Solution:
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        nums.sort() #
+    def fourSum(self, nums: list[int], target: int) -> list[list[int]]:
+        res = []
+        n = len(nums)
         
-        return []
+        # Step 1: Sort the array
+        nums.sort()
+
+        # Step 2: Outer loop for 'i' (first number)
+        for i in range(n - 3):
+            # Step 3: Skip duplicates for 'i'
+            if i > 0 and nums[i] == nums[i - 1]:
+                continue
+            
+            # --- This is now a 3Sum problem for target - nums[i] ---
+            
+            # Step 4: Second loop for 'j' (second number)
+            for j in range(i + 1, n - 2):
+                # Step 5: Skip duplicates for 'j'
+                if j > i + 1 and nums[j] == nums[j - 1]:
+                    continue
+                
+                # --- This is now a 2Sum problem ---
+                
+                # Step 7: Set up two pointers
+                l, r = j + 1, n - 1
+                
+                # Step 8: Two-pointer search
+                while l < r:
+                    current_sum = nums[i] + nums[j] + nums[l] + nums[r]
+                    
+                    if current_sum < target:
+                        # Case 1: Sum too small
+                        l += 1
+                    elif current_sum > target:
+                        # Case 2: Sum too large
+                        r -= 1
+                    else:
+                        # Case 3: Found a quadruplet!
+                        res.append([nums[i], nums[j], nums[l], nums[r]])
+                        
+                        # Skip duplicates for 'l' and 'r'
+                        l += 1
+                        while l < r and nums[l] == nums[l - 1]:
+                            l += 1
+                        
+                        r -= 1
+                        while l < r and nums[r] == nums[r + 1]:
+                            r -= 1
+        
+        return res # Step 9: Return result
     
 # main code
 if __name__ == "__main__":
