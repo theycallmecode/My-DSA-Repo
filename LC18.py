@@ -10,7 +10,33 @@
 
 🔮 Algorithm : Sort + Two Pointer
 
+1. Sort the array. Let us use two pointer and skip duplicates. And start an empty set.
 
+2. Outer Loop :
+[a]. Start with i. This i will be the first number.
+[b]. Base check : check if i > 0 and nums[i] == nums[i-1], then continue.
+[c]. This will help skip all duplicates.
+
+3. Inner Loop :
+[a]. Start with j = i+1. j is the second number in the quadruplets.
+[b]. Skip Dupliates : If j > i+1 and nums[j] == nums[j-1], then continue.
+
+4. Now we have two numbers and we need to find two more numbers with two pointers.
+5. Two-Pointer : l = j+1 and r = len-1.
+
+6. Start a loop : while l<r
+[a]. Calc sum = i+j+l+r (nums)
+[b]. Case 1 : if sum < target, move l pointer, l++
+[c]. Case 2 : if sum > target, move r pointer, r--
+[d]. Case 3 : if equal, add the result to list.
+
+7. Skip Duplicates for l
+[a]. Do l+1, while l<r and nums[l] == nums[l-1] : then increment l
+
+8. Skip Duplicates for r
+[a]. Do r-1, while l<r and nums[r] == nums[r+1] : then decrement r
+
+9. After all loop finishes, return the result list.
 
 💎 Time Complexity : 
 💎 Space Complexity : 
@@ -20,6 +46,7 @@ from typing import List
 
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        nums.sort() #
         
         return []
     
