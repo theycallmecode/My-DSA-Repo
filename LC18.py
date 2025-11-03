@@ -16,3 +16,17 @@
 💎 Space Complexity : 
 """
 
+from typing import List
+
+class Solution:
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        
+        return []
+    
+# main code
+if __name__ == "__main__":
+    num1 = [1,0,-1,0,-2,2]
+    target1 = 0
+
+    sol = Solution()
+    print("For num1 : ", sol.fourSum(num1, target1))
